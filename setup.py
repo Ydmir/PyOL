@@ -10,7 +10,7 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='PyOL',
+    name='pyol',
     version='0.1.0',
     description='Python oceanloading package',
     long_description=readme,

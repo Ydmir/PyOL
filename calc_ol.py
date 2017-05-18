@@ -24,7 +24,7 @@ Optional arguments:
 """
 import argparse
 import logging
-import oceanloading
+import pyol
 import datetime
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -107,7 +107,7 @@ if __name__ == '__main__':
     path = pkg_resources.resource_filename(__name__, args.site + '_' + calc_start_date.strftime('%y%j')  + '_' + calc_end_date.strftime('%y%j') +'_' + str(int(args.interval)) + '.txt')
     # Compute displacements (N,E,U)
     date_list = [calc_start_date + i*calc_interval  for i in range(int((calc_end_date-calc_start_date)/calc_interval))]
-    py_data = oceanloading.calc_displacement(date_list, args.site, oModel)
+    py_data = pyol.calc_displacement(date_list, args.site, oModel)
     print(args)
     
     if args.file:  # if True then store results into file
