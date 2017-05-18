@@ -14,12 +14,14 @@ Arguments:
     <end_date>: end date in ISO format.
     <interval>: interval between points in minutes.
 
+
 Optional arguments:
-    -h, --help              Shows help message and exit
-    -m MODEL, --model MODEL Name of the ocean model to use (default: GOT00.2)
+    -h, --help              Shows help message and exits
     -f, --file              If true then *.txt file with data is created
     -p, --plot              If true then plot is displayed
     -v, --verbose           Increase output verbosity
+    -m MODEL, --model MODEL Name of the ocean model to use (default: GOT00.2)
+
 
 """
 import argparse
@@ -41,6 +43,7 @@ from typing import List
 def write_ol_to_file(site: str, date_list: List[datetime.datetime], oldata: List[float], oceanModel: str, filename: str):
     """
     Saves the ocean loading time series to a file
+
     Args:
         site: Name of the station
         date_list: datetimes for the oceanloading calculations

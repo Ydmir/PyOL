@@ -2,7 +2,7 @@
 
 from setuptools import setup, find_packages
 
-if name=='__main__':
+if __name__ == '__main__':
 
     with open('README.rst') as f:
         readme = f.read()
