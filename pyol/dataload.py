@@ -152,18 +152,21 @@ def load_model_data(site: str = "", model: str = "GOT00.2", potentialfilepath: s
     amplitudes and phase lags.
 
     Args:
-        site (optional): Name of site for which to retrieve amplitudes, not used if potentialfilepath
+        site (optional): 
+            Name of site for which to retrieve amplitudes, not used if potentialfilepath is specified.
+        model (optional): 
+            Name of model used to calculate amplitudes (default: GOT00.2), not used if potentialfilepath 
             is specified.
-        model (optional): Name of model used to calculate amplitudes (default: GOT00.2), not used if potentialfilepath
-            is specified.
-        potentialfilepath (optional): path to blq-file containg displacement amplitudes and phases for the
-            desired site.
+        potentialfilepath (optional): 
+            path to blq-file containg displacement amplitudes and phases for the desired site.
 
     Returns:
         tuple containing:
-            displacement_data: numpy array where the rows contains up, west, south component of the displacement
-                amplitudes, followed by their respective phase lag.
-            tide_names: list of the tide names corresponding to each column of displacement_data
+            displacement_data: 
+                numpy array where the rows contains up, west, south component of the displacement amplitudes,
+                followed by their respective phase lag.
+            tide_names: 
+                list of the tide names corresponding to each column of displacement_data
     """
     try:
         if potentialfilepath:
@@ -190,9 +193,11 @@ def load_brest_data() -> (np.array, np.array):
 
     Returns:
         tuple containing:
-            displacement_data: numpy array where the rows contains up, west, south component of the displacement
-                amplitudes, followed by their respective phase lag. (Warning: west and south will only be 0s.)
-            tide_arguments: numpy array where each row is the Tamura degree of potential and tide arguments for the
+            displacement_data: 
+                numpy array where the rows contains up, west, south component of the displacement amplitudes, 
+                followed by their respective phase lag. (Warning: west and south will only be 0s.)
+            tide_arguments: 
+                numpy array where each row is the Tamura degree of potential and tide arguments for the
                 corresponding column in displacement data, i.e. row one is:
                 [2, 1, 1, 0, 0, 0, 0, 0]
                 if the first column in displacement data correponds exactly to the K1 tide.
