@@ -1,7 +1,7 @@
 PyOL Repository
 ========================
 
-Python package to calculate oceanloading displacements.
+Python package for calculating oceanloading displacements.
 
 Authors:
 `Joakim Strandberg <http://jstrandberg.se>`_, Grzegorz Kłopotek, Niko Karainen.
