@@ -1,7 +1,8 @@
 PyOL Repository
 ========================
 
-This repository now follows the basic format of a python repo.
+Python package to calculate oceanloading displacements.
 
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
+Authors:
+`Joakim Strandberg <http://jstrandberg.se>`_, Grzegorz Kłopotek, Niko Karainen.
 

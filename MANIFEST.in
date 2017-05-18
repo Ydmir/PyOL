@@ -1,4 +1,4 @@
 include *.txt
 include Makefile
 recursive-include tests *.txt *.py
-recursive-include oceanloading *.dat
+recursive-include PyOL *.dat
