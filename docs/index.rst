@@ -9,9 +9,7 @@ Welcome to pyol's documentation!
 .. toctree::
    :maxdepth: 4
 
-   calc_ol
-   pyol
-   setup
+   modules
    
 
 

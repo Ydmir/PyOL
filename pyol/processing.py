@@ -102,6 +102,7 @@ def calc_displacement(calc_datetimes: List[datetime.datetime], site: str, model:
         calc_datetimes: List of date and times at which to calculate the displacement in the datetime format.
         site: Name used for the site. Must correspond to the name used in the file name of the ocean loading file.
         model: Model used to generate the time series. Must correspond to an existing ocean loading file.
+
     Returns:
         Numpy array with up, north and east component of the ocean loading displacement.
     """

@@ -20,6 +20,7 @@ Optional arguments:
     -f, --file              If true then *.txt file with data is created
     -p, --plot              If true then plot is displayed
     -v, --verbose           Increase output verbosity
+    -t,                     A test
     -m MODEL, --model MODEL Name of the ocean model to use (default: GOT00.2)
 
 

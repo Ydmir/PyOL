@@ -9,27 +9,45 @@ def load_potentialdata() -> (np.array, List[str]):
     information for one tide constituent.
 
     Returns:
-        potentialdata: Contents of each column of the output potential data table:
-            [0]:  WAVE NUMBER OF TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT.
-            [1]:  WAVE NUMBER OF CARTWRIGHT-TAYLER-EDDEN 1973 TIDAL POTENTIAL DEVELOPMENT.
-            [2]:  DEGREE OF THE POTENTIAL.
-            [3]:  ORDER  OF THE POTENTIAL (= ARGUMENT NO. 1).
-            [4]:  ARGUMENT NO. 2.
-            [5]:  ARGUMENT NO. 3.
-            [6]:  ARGUMENT NO. 4.
-            [7]:  ARGUMENT NO. 5.
-            [8]:  ARGUMENT NO. 6.
-            [9]:  ARGUMENT NO. 7 (ONLY VALID FOR TAMURA 1987 POTENTIAL)
-            [10]: ARGUMENT NO. 8 (ONLY VALID FOR TAMURA 1987 POTENTIAL)
-            [11]: PHASE NUMBER NP, NP*PI/2 IS BE ADDED TO PHASE.
-            [12]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1870.
-            [13]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1960.
-            [14]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1960.
-            [15]: DOODSON AMPLITUDE REFERRING TO EPOCH 1900.
-            [16]: TAMURA  AMPLITUDE REFERRING TO EPOCH 2000.
-            [17]: TAMURA  TIME DERIVATIVE OF AMPLITUDE PER JULIAN CENTURY.
+        (np.array, List[str]):
+            potentialdata:
+                [0]:  WAVE NUMBER OF TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT.
 
-        tide_names: List of Darwin names for the tides.
+                [1]:  WAVE NUMBER OF CARTWRIGHT-TAYLER-EDDEN 1973 TIDAL POTENTIAL DEVELOPMENT.
+
+                [2]:  DEGREE OF THE POTENTIAL.
+
+                [3]:  ORDER  OF THE POTENTIAL (= ARGUMENT NO. 1).
+
+                [4]:  ARGUMENT NO. 2.
+
+                [5]:  ARGUMENT NO. 3.
+
+                [6]:  ARGUMENT NO. 4.
+
+                [7]:  ARGUMENT NO. 5.
+
+                [8]:  ARGUMENT NO. 6.
+
+                [9]:  ARGUMENT NO. 7 (ONLY VALID FOR TAMURA 1987 POTENTIAL)
+
+                [10]: ARGUMENT NO. 8 (ONLY VALID FOR TAMURA 1987 POTENTIAL)
+
+                [11]: PHASE NUMBER NP, NP*PI/2 IS BE ADDED TO PHASE.
+
+                [12]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1870.
+
+                [13]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1960.
+
+                [14]: CARTWRIGHT-TAYLER-EDDEN AMPLITUDE FOR EPOCH 1960.
+
+                [15]: DOODSON AMPLITUDE REFERRING TO EPOCH 1900.
+
+                [16]: TAMURA  AMPLITUDE REFERRING TO EPOCH 2000.
+
+                [17]: TAMURA  TIME DERIVATIVE OF AMPLITUDE PER JULIAN CENTURY.
+
+            tide_names: List of Darwin names for the tides.
     """
     potentialfilename = pkg_resources.resource_filename(__name__, 'data/etcpot.dat')
 
@@ -55,17 +73,24 @@ def get_astronomical_arguments(datestring: str) -> (np.array, np.array):
     Args:
         datestring: -- time in UTC in iso format: 2016-01-16T23:45:00
 
-    Returns
-        Tuple containing
+    Returns:
+        (np.array, np.array)
             astr_args:
-                astr_args[0]:  --  MEAN MOONTIME IN DEGREE.
-                astr_args[1]:  --  MEAN LONGITUDE OF THE MOON IN DEGREE.
-                astr_args[2]:  --  MEAN LONGITUDE OF THE SUN  IN DEGREE.
-                astr_args[3]:  --  MEAN LONGITUDE OF THE PERIGEE OF THE MONN'S ORBIT  IN DEGREE.
-                astr_args[4]:  --  NEGATIVE MEAN LONGITUDE OF THE ASCENDING NODE OF THE MOON'S ORBIT IN DEGREE.
-                astr_args[5]:  --  MEAN LONGITUDE OF THE PERIGEE OF THE SUN'S ORBIT IN DEGREE.
-                astr_args[6]:  --  PERIOD OF JUPITER'S OPPOSITION IN DEGREE (FOR TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT).
-                astr_args[7]:  --  PERIOD OF VENUS'S CONJUNCTION IN DEGREE (FOR TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT).
+                [0]: MEAN MOONTIME IN DEGREE.
+
+                [1]: MEAN LONGITUDE OF THE MOON IN DEGREE.
+
+                [2]: MEAN LONGITUDE OF THE SUN  IN DEGREE.
+
+                [3]: MEAN LONGITUDE OF THE PERIGEE OF THE MONN'S ORBIT  IN DEGREE.
+
+                [4]: NEGATIVE MEAN LONGITUDE OF THE ASCENDING NODE OF THE MOON'S ORBIT IN DEGREE.
+
+                [5]: MEAN LONGITUDE OF THE PERIGEE OF THE SUN'S ORBIT IN DEGREE.
+
+                [6]: PERIOD OF JUPITER'S OPPOSITION IN DEGREE (FOR TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT).
+
+                [7]: PERIOD OF VENUS'S CONJUNCTION IN DEGREE (FOR TAMURA 1987 TIDAL POTENTIAL DEVELOPMENT).
 
             rates: TIME DERIVATIVES OF THE CORRESPONDING VARIABLES IN astr_args IN DEGREE PER HOUR.
     """
@@ -161,7 +186,7 @@ def load_model_data(site: str = "", model: str = "GOT00.2", potentialfilepath: s
             path to blq-file containg displacement amplitudes and phases for the desired site.
 
     Returns:
-        tuple containing:
+        (np.array, List[str]):
             displacement_data: 
                 numpy array where the rows contains up, west, south component of the displacement amplitudes,
                 followed by their respective phase lag.
@@ -192,7 +217,7 @@ def load_brest_data() -> (np.array, np.array):
     """Load brest data
 
     Returns:
-        tuple containing:
+        tuple:
             displacement_data: 
                 numpy array where the rows contains up, west, south component of the displacement amplitudes, 
                 followed by their respective phase lag. (Warning: west and south will only be 0s.)
