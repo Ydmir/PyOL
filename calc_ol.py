@@ -30,11 +30,8 @@ import logging
 import pyol
 import datetime
 import matplotlib.pyplot as plt
-import matplotlib as mpl
 from matplotlib import style
 
-from matplotlib.dates import DayLocator, HourLocator, DateFormatter, drange
-import numpy as np
 import dateutil.parser
 import pkg_resources
 from typing import List
@@ -49,7 +46,7 @@ def write_ol_to_file(site: str, date_list: List[datetime.datetime], oldata: List
         site: Name of the station
         date_list: datetimes for the oceanloading calculations
         oldata: calculated displacements
-        oceanModel: Name of the ocean model to used
+        oceanModel: Name of the used ocean model
         file: Name of the file to which the time series are saved
     """
     with open(filename, 'w') as f:
